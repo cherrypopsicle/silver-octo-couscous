@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/cherrypopsicle/silver-octo-couscous/issues"
   },
-  "homepage": "https://github.com/cherrypopsicle/silver-octo-couscous#readme"
+  "homepage": "https://github.com/cherrypopsicle/silver-octo-couscous#readme",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.4.2"
+  }
 }
