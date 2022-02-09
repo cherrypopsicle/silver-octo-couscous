@@ -18,7 +18,7 @@ contract CryptoJesus is Ownable, ERC721 {
         "ipfs://QmdC3m6iJP9qNUyxpAqquAsXwbS8T2knBG4Ga9ocCpQxWK/";
 
     // constructor
-    constructor(bytes32 merkleRoot) ERC721("CryptoJesus Genesis", "CJG") {}
+    constructor() ERC721("CryptoJesus Genesis", "CJG") {}
 
     // for opensea standards
     function contractURI() public view returns (string memory) {
