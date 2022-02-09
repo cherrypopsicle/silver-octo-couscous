@@ -6,7 +6,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol";
 
-contract CherryToadz is Ownable, ERC721 {
+contract CryptoJesus is Ownable, ERC721 {
     using Strings for uint256;
 
     uint public tokenId = 0;
@@ -36,24 +36,4 @@ contract CherryToadz is Ownable, ERC721 {
     function _baseURI() internal view virtual override returns (string memory) {
         return _ipfsFolder;
     }
-
-    function _leaf(address account) internal pure returns (bytes32) {
-        return keccak256(abi.encodePacked(account));
-    }
-
-    function _verify(bytes32 leaf, bytes32[] memory proof)
-        internal
-        view
-        returns (bool)
-    {
-        bool value = MerkleProof.verify(proof, root, leaf);
-        return value;
-    }
-
-    function _pop(address _to, uint256 _tokenId) internal {
-        _mint(_to, _tokenId);
-        didMint[msg.sender] = true;
-        tokenOwned[msg.sender] = _tokenId;
-    }
-
 }
